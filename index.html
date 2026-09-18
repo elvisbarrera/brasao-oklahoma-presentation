@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brasão — Oklahoma Expansion Proposal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Lato:wght@300;400;700;900&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&family=Syne:wght@700;800&family=Montserrat:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="progress-track">
+    <div id="progress-fill"></div>
+  </div>
+
+  <div class="deck-chrome">
+    <img class="nav-logo-img" id="nav-logo" src="img/logo_light.png" alt="Brasão Brazilian Steakhouse Logo">
+    <div class="chrome-right" style="pointer-events:auto; display:flex; align-items:center; gap:16px;">
+      <div class="counter"><b id="counter-current">01</b> / 10</div>
+      <button class="nav-btn magnetic" id="restart-btn" onclick="restartDeck()" aria-label="Start over"
+        style="width:38px; height:38px;">
+        <svg viewBox="0 0 24 24" style="width:16px; height:16px;">
+          <path d="M4 4v6h6" />
+          <path d="M20 20v-6h-6" />
+          <path d="M5.5 9a8 8 0 0113-3.5L20 8" />
+          <path d="M18.5 15a8 8 0 01-13 3.5L4 16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="deck">
+
+    <!-- SLIDE 1 — TITLE -->
+    <section class="slide active" id="slide-1">
+      <div class="hero-video-layer" id="hero-video-layer">
+        <div id="yt-bg-frame"></div>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <img class="hero-logo-img reveal-item" style="transition-delay:.15s" src="img/logo_light.png"
+          alt="Brasão Brazilian Steakhouse">
+        <div class="eyebrow"><span>A Proven Brazilian Steakhouse, Ready to Grow</span></div>
+        <h1 data-split>Bringing Brasão's Churrasco Tradition to Oklahoma</h1>
+        <p class="sub reveal-item" style="transition-delay:.5s">Three thriving Texas locations. A guest base that
+          returns again and again. We are looking for the right plaza partner to bring Brasão's award-winning dining
+          experience to Oklahoma.</p>
+        <button class="btn-gold reveal-item magnetic" style="transition-delay:.65s" onclick="goTo(1)">Begin</button>
+      </div>
+    </section>
+
+    <!-- SLIDE 2 — EXPLAINER VIDEO -->
+    <section class="slide light-slide" id="slide-2">
+      <div class="slide-inner">
+        <span class="eyebrow"><span>Who We Are</span></span>
+        <h2 data-split>Discover Brasão in Under Two Minutes</h2>
+        <p class="body reveal-item" style="transition-delay:.3s">A quick look at who we are, how the Rodízio experience
+          works, and what Brasão brings to a plaza.</p>
+        <div class="explainer-video-wrap reveal-item" style="transition-delay:.4s">
+          <div class="explainer-video-inner" id="explainer-video-inner">
+            <div id="yt-explainer-frame"></div>
+          </div>
+          <button class="video-toggle-btn" id="video-toggle-btn" aria-label="Play video">
+            <svg id="video-toggle-icon" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3 — THE EXPERIENCE -->
+    <section class="slide light-slide" id="slide-3">
+      <div class="slide-inner">
+        <span class="eyebrow"><span>The Brasão Experience</span></span>
+        <h2 data-split>A Destination, Not Just a Restaurant</h2>
+        <p class="body reveal-item" style="transition-delay:.3s">Brasão brings Southern Brazil's centuries-old Churrasco
+          tradition to life through Rodízio-style service: gaucho chefs carve premium cuts — including USDA Prime beef,
+          the top 2% of all beef graded — tableside, continuously, until every guest is satisfied. The experience is
+          rounded out by a gourmet salad bar and an award-winning wine cellar.</p>
+        <div class="exp-cards">
+          <div class="exp-card panel-card tilt-card reveal-item" style="transition-delay:.4s">
+            <div class="n">17</div>
+            <div class="divider"></div>
+            <div class="l">Premium Cuts</div>
+          </div>
+          <div class="exp-card panel-card tilt-card reveal-item" style="transition-delay:.48s">
+            <div class="n">50+</div>
+            <div class="divider"></div>
+            <div class="l">Salad Bar Items</div>
+          </div>
+          <div class="exp-card panel-card tilt-card reveal-item" style="transition-delay:.56s">
+            <div class="n">200+</div>
+            <div class="divider"></div>
+            <div class="l">Wine Labels</div>
+          </div>
+          <div class="exp-card panel-card tilt-card reveal-item" style="transition-delay:.64s">
+            <div class="n exp-text">USDA<br>Prime</div>
+            <div class="divider"></div>
+            <div class="l">Only Grade Served</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4 — PROVEN IN TEXAS -->
+    <section class="slide light-slide" id="slide-4">
+      <div class="slide-inner">
+        <span class="eyebrow"><span>Proven in Texas</span></span>
+        <h2 data-split>Three Markets. Three Anchor Locations.</h2>
+        <div class="loc-grid">
+          <div class="loc-card panel-card tilt-card reveal-item" style="transition-delay:.35s">
+            <div class="city">San Antonio</div>
+            <div class="area">The Rim</div>
+            <p>Our flagship, and the market where Brasão became a top-rated destination dining anchor within one of San
+              Antonio's busiest retail corridors.</p>
+          </div>
+          <div class="loc-card panel-card tilt-card reveal-item" style="transition-delay:.45s">
+            <div class="city">Plano</div>
+            <div class="area">Legacy East</div>
+            <p>A DFW expansion that quickly became a go-to spot for celebrations and business dining in one of the
+              region's most affluent retail districts.</p>
+          </div>
+          <div class="loc-card panel-card tilt-card reveal-item" style="transition-delay:.55s">
+            <div class="city">Irving</div>
+            <div class="area">Las Colinas</div>
+            <p>Our newest location, drawing steady corporate and destination traffic to the Las Colinas Village dining
+              scene.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5 — THE FACTS -->
+    <section class="slide light-slide" id="slide-5">
+      <div class="slide-inner">
+        <span class="eyebrow"><span>By the Numbers</span></span>
+        <h2 data-split>The Facts Behind Brasão</h2>
+        <div class="stat-grid">
+          <div class="stat reveal-item" style="transition-delay:.3s">
+            <div class="num" data-target="350000" data-suffix="+">0</div>
+            <div class="label">Guests / Year</div>
+          </div>
+          <div class="stat reveal-item" style="transition-delay:.38s">
+            <div class="num" data-target="26" data-prefix="$" data-suffix="M+">$0</div>
+            <div class="label">Annual Revenue</div>
+          </div>
+          <div class="stat reveal-item" style="transition-delay:.46s">
+            <div class="num" data-target="4.9" data-decimal="1" data-suffix=" ★">0</div>
+            <div class="label">Google Rating</div>
+          </div>
+          <div class="stat reveal-item" style="transition-delay:.54s">
+            <div class="num" data-target="25000" data-suffix="+">0</div>
+            <div class="label">Verified Reviews</div>
+          </div>
+        </div>
+        <div class="why-list">
+          <div class="why-item reveal-item" style="transition-delay:.62s">
+            <div class="num2">01</div>
+            <div>
+              <div class="t">Proven, Multi-Market Operator</div>
+              <div class="d">Three successful Texas locations, an established operating playbook.</div>
+            </div>
+          </div>
+          <div class="why-item reveal-item" style="transition-delay:.68s">
+            <div class="num2">02</div>
+            <div>
+              <div class="t">Drives Dwell Time</div>
+              <div class="d">Rodízio-style dining keeps guests seated for a full evening.</div>
+            </div>
+          </div>
+          <div class="why-item reveal-item" style="transition-delay:.74s">
+            <div class="num2">03</div>
+            <div>
+              <div class="t">Upscale, High-Spend Guests</div>
+              <div class="d">Full-experience pricing elevates a plaza's tenant mix.</div>
+            </div>
+          </div>
+          <div class="why-item reveal-item" style="transition-delay:.8s">
+            <div class="num2">04</div>
+            <div>
+              <div class="t">Loyal, Vocal Following</div>
+              <div class="d">25,000+ verified reviews at a 4.9 average — guests who return and refer.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6 — GOOGLE -->
+    <section class="slide light-slide" id="slide-6">
+      <div class="slide-inner">
+        <div class="google-logo-wrap reveal-item" style="transition-delay:.2s">
+          <img class="google-logo-img" src="img/google.png" alt="Google Logo">
+        </div>
+        <span class="eyebrow"><span>Verified on Google</span></span>
+        <h2 data-split>4.9 Stars Across Texas</h2>
+        <div class="mega-stat reveal-item" style="transition-delay:.4s">
+          <div class="mega-num" data-target="4.9" data-decimal="1" data-suffix=" ★">0</div>
+          <div class="mega-label">Average Rating<br><strong>20,727 Combined Reviews</strong> across all three locations
+          </div>
+        </div>
+        <div class="loc-grid">
+          <div class="loc-card panel-card tilt-card reveal-item" style="transition-delay:.56s">
+            <div class="city">San Antonio</div>
+            <div class="area">The Rim</div>
+            <div class="ot-rating"><span class="num" data-target="4.9" data-decimal="1" data-suffix=" ★">0</span><span
+                class="ot-count">10,262 reviews</span></div>
+          </div>
+          <div class="loc-card panel-card tilt-card reveal-item" style="transition-delay:.64s">
+            <div class="city">Plano</div>
+            <div class="area">Legacy East</div>
+            <div class="ot-rating"><span class="num" data-target="4.9" data-decimal="1" data-suffix=" ★">0</span><span
+                class="ot-count">5,425 reviews</span></div>
+          </div>
+          <div class="loc-card panel-card tilt-card reveal-item" style="transition-delay:.72s">
+            <div class="city">Irving</div>
+            <div class="area">Las Colinas</div>
+            <div class="ot-rating"><span class="num" data-target="4.9" data-decimal="1" data-suffix=" ★">0</span><span
+                class="ot-count">5,040 reviews</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7 — OPENTABLE: 5 CONSECUTIVE YEARS -->
+    <section class="slide light-slide" id="slide-7">
+      <div class="slide-inner">
+        <div class="ot-logo-wrap reveal-item" style="transition-delay:.2s">
+          <img class="ot-logo-img" src="img/opentable.png" alt="OpenTable Logo">
+        </div>
+        <span class="eyebrow"><span>Diners' Choice Award</span></span>
+        <h2 data-split>Seven Years Running</h2>
+        <div class="mega-stat reveal-item" style="transition-delay:.4s">
+          <div class="mega-num" data-target="5">0</div>
+          <div class="mega-label">Consecutive Years Winning<br><strong>Best Restaurant for Special Occasions</strong> —
+            San Antonio</div>
+        </div>
+        <div class="loc-grid">
+          <div class="loc-card panel-card tilt-card reveal-item" style="transition-delay:.56s">
+            <div class="city">San Antonio</div>
+            <div class="area">The Rim</div>
+            <div class="ot-rating"><span class="num" data-target="4.7" data-decimal="1" data-suffix=" ★">0</span><span
+                class="ot-count">4,325 reviews</span></div>
+          </div>
+          <div class="loc-card panel-card tilt-card reveal-item" style="transition-delay:.64s">
+            <div class="city">Plano</div>
+            <div class="area">Legacy East</div>
+            <div class="ot-rating"><span class="num" data-target="4.5" data-decimal="1" data-suffix=" ★">0</span><span
+                class="ot-count">1,112 reviews</span></div>
+          </div>
+          <div class="loc-card panel-card tilt-card reveal-item" style="transition-delay:.72s">
+            <div class="city">Irving</div>
+            <div class="area">Las Colinas</div>
+            <div class="ot-rating"><span class="num" data-target="4.6" data-decimal="1" data-suffix=" ★">0</span><span
+                class="ot-count">582 reviews</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8 — TRIPADVISOR -->
+    <section class="slide light-slide" id="slide-8">
+      <div class="slide-inner">
+        <div class="ta-logo-wrap reveal-item" style="transition-delay:.15s">
+          <img class="ta-logo-img" src="img/tripadvisor.png" alt="Tripadvisor Logo">
+        </div>
+        <span class="eyebrow"><span>Tripadvisor Certified</span></span>
+        <h2 data-split>A Top-25 Restaurant in Texas</h2>
+        <div class="ta-stars reveal-item" style="transition-delay:.35s">
+          <svg viewBox="0 0 24 24" style="animation-delay:.5s">
+            <path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.8 7.1-.7z" />
+          </svg>
+          <svg viewBox="0 0 24 24" style="animation-delay:.6s">
+            <path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.8 7.1-.7z" />
+          </svg>
+          <svg viewBox="0 0 24 24" style="animation-delay:.7s">
+            <path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.8 7.1-.7z" />
+          </svg>
+          <svg viewBox="0 0 24 24" style="animation-delay:.8s">
+            <path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.8 7.1-.7z" />
+          </svg>
+          <svg viewBox="0 0 24 24" style="animation-delay:.9s">
+            <path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.8 7.1-.7z" />
+          </svg>
+        </div>
+        <div class="loc-grid">
+          <div class="loc-card panel-card tilt-card reveal-item ta-card" style="transition-delay:.5s">
+            <div class="city">San Antonio</div>
+            <div class="area">The Rim</div>
+            <div class="ot-rating"><span class="num" data-target="4.9" data-decimal="1" data-suffix=" ★">0</span><span
+                class="ot-count">96 reviews</span></div>
+            <p class="ta-rank">#25 of 2,828 restaurants</p>
+          </div>
+          <div class="loc-card panel-card tilt-card reveal-item ta-card" style="transition-delay:.6s">
+            <div class="city">Plano</div>
+            <div class="area">Legacy East</div>
+            <div class="ot-rating"><span class="num" data-target="4.8" data-decimal="1" data-suffix=" ★">0</span><span
+                class="ot-count">11 reviews</span></div>
+            <p class="ta-rank">#100 of 693 restaurants</p>
+          </div>
+          <div class="loc-card panel-card tilt-card reveal-item ta-card" style="transition-delay:.7s">
+            <div class="city">Irving</div>
+            <div class="area">Las Colinas</div>
+            <div class="ot-rating"><span class="num" data-target="5.0" data-decimal="1" data-suffix=" ★">0</span><span
+                class="ot-count">11 reviews</span></div>
+            <p class="ta-rank">#32 of 428 restaurants</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9 — ECONOMIC IMPACT -->
+    <section class="slide light-slide" id="slide-9">
+      <div class="slide-inner">
+        <span class="eyebrow"><span>Local Impact</span></span>
+        <h2 data-split>What Brasão Brings to the Community</h2>
+        <p class="body reveal-item" style="transition-delay:.3s">A Brasão location is a high-volume economic anchor for
+          a
+          premier retail development — driving regional destination foot traffic and lasting local investment.</p>
+        <div class="impact-grid">
+          <div class="impact-stat panel-card reveal-item" style="transition-delay:.4s">
+            <div class="num" data-target="150" data-suffix="+">0</div>
+            <div class="label">High-Impact Hospitality Jobs</div>
+          </div>
+          <div class="impact-stat panel-card reveal-item" style="transition-delay:.48s">
+            <div class="num" data-target="650" data-prefix="$" data-suffix="K+">$0</div>
+            <div class="label">Est. Annual Sales Tax Generated</div>
+          </div>
+          <div class="impact-stat panel-card reveal-item" style="transition-delay:.56s">
+            <div class="num" data-target="5.5" data-prefix="$" data-decimal="1" data-suffix="M+">$0</div>
+            <div class="label">Committed Private Buildout</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 10 — THE ASK -->
+    <section class="slide light-slide" id="slide-10">
+      <div class="slide-inner">
+        <span class="eyebrow"><span>The Opportunity</span></span>
+        <h2 data-split>Let's Bring Brasão to Oklahoma</h2>
+        <p class="body reveal-item" style="transition-delay:.3s">We are evaluating premium retail and mixed-use plazas
+          in the Oklahoma market for Brasão's fourth location.</p>
+        <div class="ask-grid">
+          <div class="ask-card panel-card tilt-card reveal-item" style="transition-delay:.4s">
+            <div class="k">Space Requirements</div>
+            <div class="v">8,500 – 10,500 SF</div>
+            <div class="sub-v">Outdoor patio &amp; valet access preferred</div>
+          </div>
+          <div class="ask-card panel-card tilt-card reveal-item" style="transition-delay:.48s">
+            <div class="k">Target Submarket</div>
+            <div class="v">Oklahoma City / Tulsa</div>
+            <div class="sub-v">High-barrier, affluent retail &amp; dining corridors</div>
+          </div>
+          <div class="ask-card panel-card tilt-card reveal-item" style="transition-delay:.56s">
+            <div class="k">Target Timeline</div>
+            <div class="v">Late 2025 / Early 2026</div>
+            <div class="sub-v">Site evaluation &amp; lease review underway</div>
+          </div>
+        </div>
+        <div class="contact-btns reveal-item" style="transition-delay:.64s">
+          <button class="btn-gold magnetic" id="open-form">Send a Message</button>
+          <a href="mailto:expansion@brasaousa.com?subject=Brasão%20Oklahoma%20Expansion%20Opportunity"
+            class="btn-line magnetic">Direct Inquiry</a>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <input type="text" placeholder="Your name" required>
+          <input type="text" placeholder="Plaza / property name" required>
+          <input type="email" placeholder="Email address" required>
+          <textarea rows="3" placeholder="Tell us about the space (size, location, delivery date)"></textarea>
+          <button type="submit">Submit Inquiry</button>
+        </form>
+        <div class="form-note" id="form-note"></div>
+        <img class="signoff-logo reveal-item" style="transition-delay:.68s" src="img/logo.png"
+          alt="Brasão Brazilian Steakhouse">
+        <div class="signoff reveal-item" style="transition-delay:.72s">Brasão Brazilian
+          Steakhouse · <a href="https://brasaousa.com" target="_blank" rel="noopener"
+            style="color:inherit; text-decoration:underline;">brasaousa.com</a></div>
+      </div>
+    </section>
+
+  </div>
+
+  <div id="streak"></div>
+
+  <div class="deck-nav">
+    <button class="nav-btn magnetic" id="prev-btn" onclick="prevSlide()" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24">
+        <path d="M15 5l-7 7 7 7" />
+      </svg>
+    </button>
+    <div class="dots" id="dots"></div>
+    <button class="nav-btn magnetic" id="next-btn" onclick="nextSlide()" aria-label="Next slide">
+      <svg viewBox="0 0 24 24">
+        <path d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
