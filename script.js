@@ -50,6 +50,7 @@ if (initialSlide > 0 && initialSlide < total) {
   updateTheme(initialSlide);
 }
 statsOnSlide(current);
+if (current === 5) startGoogleLiveTicker();
 
 function statsOnSlide(i) {
   slides[i].querySelectorAll('.num[data-target], .mega-num[data-target]').forEach(el => {
@@ -107,6 +108,11 @@ function goTo(i) {
     nextBtn.disabled = i === total - 1;
     if (progressFill) progressFill.style.width = ((i + 1) / total * 100) + '%';
     statsOnSlide(i);
+    if (i === 5) {
+      startGoogleLiveTicker();
+    } else {
+      stopGoogleLiveTicker();
+    }
     current = i;
   });
 
@@ -268,3 +274,55 @@ function toggleExplainerVideo() {
   }
 }
 document.getElementById('video-toggle-btn').addEventListener('click', toggleExplainerVideo);
+
+/* ---------- Live Google Review Ticker (Slide 6) ---------- */
+let googleLiveTotal = 20727;
+const locCounts = {
+  sa: 10262,
+  plano: 5425,
+  irving: 5040
+};
+const locCycle = ['sa', 'plano', 'sa', 'irving', 'sa'];
+let locCycleIdx = 0;
+let googleTickerTimeout = null;
+
+function tickGoogleReview() {
+  googleLiveTotal += 1;
+  const totalEl = document.getElementById('google-live-total');
+  if (totalEl) {
+    totalEl.textContent = googleLiveTotal.toLocaleString('en-US');
+    totalEl.classList.remove('ticker-bump');
+    void totalEl.offsetWidth;
+    totalEl.classList.add('ticker-bump');
+  }
+
+  const locKey = locCycle[locCycleIdx % locCycle.length];
+  locCycleIdx++;
+  locCounts[locKey] += 1;
+  const locEl = document.getElementById('google-' + locKey + '-count');
+  if (locEl) {
+    const valSpan = locEl.querySelector('.cnt-val');
+    if (valSpan) {
+      valSpan.textContent = locCounts[locKey].toLocaleString('en-US');
+      valSpan.classList.remove('count-bump');
+      void valSpan.offsetWidth;
+      valSpan.classList.add('count-bump');
+    }
+  }
+
+  // Realistic randomized delay between 3.6s and 6.2s
+  const nextDelay = Math.floor(Math.random() * 2600) + 3600;
+  googleTickerTimeout = setTimeout(tickGoogleReview, nextDelay);
+}
+
+function startGoogleLiveTicker() {
+  if (googleTickerTimeout) return;
+  googleTickerTimeout = setTimeout(tickGoogleReview, 3000);
+}
+
+function stopGoogleLiveTicker() {
+  if (googleTickerTimeout) {
+    clearTimeout(googleTickerTimeout);
+    googleTickerTimeout = null;
+  }
+}
